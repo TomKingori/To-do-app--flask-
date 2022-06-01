@@ -1,5 +1,55 @@
 {% extends "base.html" %}
 {% block title %} Home {% endblock %}
 {% block content %}
-<h1>Hello Tom</h1>
+
+<header>
+    <h1>To-Do List</h1>
+    <form method="POST" id="new-task-form">
+        <input 
+            name="note"
+            type="text"
+            id="new-task-input"
+            placeholder="What do you have planned" 
+        />
+        <input 
+            type="submit"
+            id="new-task-submit"
+            value="add task" 
+        />
+    </form>
+</header>
+
+<main>
+    <section class="task-list">
+
+        <h2>Tasks</h2>
+
+        <div id="tasks">
+            {% for note in user.notes %}
+            <!-- <li class="list-group-item">{{ note.data }}</li> -->
+            <div class="task">
+                <div class="content">
+                    <input
+                        id="task-input"
+                        type="text"
+                        class="text"
+                        value={{note.data}}
+                        readonly
+                    />
+                </div>
+                <div class="actions">
+                    <button class="edit" id="task-edit">Edit</button>
+                    <button class="delete" onClick="deleteNote({{ note.id }})">Delete</button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </section>
+</main>
+
+ <script>
+
+ </script>
+
 {% endblock %}
