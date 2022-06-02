@@ -1,4 +1,4 @@
-# flask To Do App
+# Flask To Do App
 
 ## Setup and installation
 
