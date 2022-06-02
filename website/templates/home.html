@@ -33,12 +33,11 @@
                         id="task-input"
                         type="text"
                         class="text"
-                        value={{note.data}}
+                        value="{{note.data}}"
                         readonly
                     />
                 </div>
                 <div class="actions">
-                    <button class="edit" id="task-edit">Edit</button>
                     <button class="delete" onClick="deleteNote({{ note.id }})">Delete</button>
                 </div>
             </div>
